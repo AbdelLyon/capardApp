@@ -1,4 +1,67 @@
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import'~bootstrap/scss/bootstrap';
-body {
-    background-color: lightgray;
+
+.nav-icon {
+    font-size: 13px;
+
 }
+
+
+body {
+    font-family: 'Archivo Narrow', sans-serif
+}
+
+body,
+h2,
+textarea:required,
+input:required {
+    font-size: 0.9rem;
+}
+
+tr {
+    height: 40px;
+}
+
+.logo {
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    box-shadow: 0px 1px 6px #bebebe88;
+    border: 1px solid #bebebe88;
+}
+
+.app-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    width: 90%;
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.iputImg {
+    font-size: 14px;
+}
+
+.sidebar {
+    width: 20%;
+    min-width: 180px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.2)
+}
+
+// main {
+//     background-image: url("../../public/images/Fotolia_81241373_S.jpg");
+// }
