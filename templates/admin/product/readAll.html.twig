@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+	<div class="flex-fill ms-4 shadow table-responsive bg-white p-4">
+		<div class="d-flex justify-content-between align-items-center mb-4">
+			<h2 class="fw-bold m-0 text-secondary ">produits</h2>
+			<form id="search" class="d-flex">
+				<input class="form-control form-control-sm me-1" name="search" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-sm d-flex align-items-center" type="submit">
+					<i class="fa-solid fa-magnifying-glass text-primary"></i>
+				</button>
+			</form>
+		</div>
+		<table class="table table-sm table-hover">
+			<thead class="text-primary">
+				<tr>
+					<th>
+						<span>ID</span>
+						<span class='btn-id'>
+							<i class="fa-solid fa-caret-down text-secondary ms-2"></i>
+						</span>
+					</th>
+					<th>TITRE</th>
+					<th>
+						<span>PRIX</span>
+						<i class="fa-solid fa-caret-down text-secondary ms-2"></i>
+					</th>
+					<th>QUANTITÉ</th>
+					<th>
+						<span>ACTIF</span>
+						<i class="fa-solid fa-caret-down text-secondary ms-2"></i>
+					</th>
+					<th>ACTIONS</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for product in products %}
+					<tr class="align-center">
+						<td class="content-id">{{ product.id }}</td>
+						<td>{{ product.title }}</td>
+						<td>{{ product.price }}€</td>
+						<td>{{ product.quantity }}</td>
+						<td>
+							<i class="{{ product.isActive ? "fa-solid fa-check text-success" : "fa-solid fa-xmark text-danger" }}"></i>
+						</td>
+						<td>
+							<div class="d-flex">
+								<a class="nav-icon d-block link" href=" {{path('admin_product_readOne', {id :product.id})}} ">
+									<i class="fa-solid fa-eye text-primary"></i>
+								</a>
+								<a class="nav-icon d-block ms-4" href=" {{path('admin_product_update', {id :product.id} )}}">
+									<i class="fa-solid fa-pen-to-square text-success"></i>
+								</a>
+							</div>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="8">Aucun enregistrement trouvé</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<div class="d-flex flex-row-reverse">
+			<a href=" {{ path('admin_product_create') }} " class="btn btn-sm btn-primary d-flex">
+				<i class="fa-solid fa-plus text-white"></i>
+			</a>
+		</div>
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success text-center mt-2">
+				{{message}}
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -21,7 +21,10 @@ class ProductType extends AbstractType
                 'label' => 'Marque'
             ])
             ->add('imageFile', VichImageType::class, [
-                'label' => 'Image'
+                'allow_delete' => false,
+                'delete_label' => null,
+                // 'imagine_pattern' => 300,
+
             ])
             ->add('description', null, [
                 'label' => 'Déscription',

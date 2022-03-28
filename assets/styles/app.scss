@@ -1,6 +1,7 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import'~bootstrap/scss/bootstrap';
 
+
 .nav-icon {
     font-size: 13px;
 
@@ -22,6 +23,12 @@ tr {
     height: 40px;
 }
 
+th {
+    font-size: 0.8rem;
+
+}
+
+
 .logo {
     font-style: italic;
     font-size: 1rem;
@@ -33,9 +40,10 @@ tr {
 }
 
 .app-container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    background-color: #fdfdfdf6;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 40px;
 }
 
 .navbar {
@@ -43,10 +51,28 @@ tr {
     margin: 0 auto;
 }
 
+
+.vich-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    a {
+        margin-top: 10px;
+        text-decoration: none;
+
+        img {
+            height: 250px;
+        }
+    }
+}
+
 main {
     display: flex;
     width: 90%;
-    margin: 0 auto;
+    margin: 0px auto;
+    min-height: 85vh;
 }
 
 .iputImg {
