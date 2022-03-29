@@ -84,12 +84,13 @@
             "symfony console doctrine:database:create",
             "symfony console doctrine:schema:update --force"
         ],
+        "schema:valid": "symfony console doctrine:schema:valid",
         "migration": [
             "symfony console make:migration",
             "symfony console doctrine:migrations:migrate"
         ],
         "db-create": "symfony console doctrine:database:create",
-        "cach-clear": "symfony console cach:clear",
+        "cach:clear": "symfony console cach:clear",
         "controller": "symfony console make:controller",
         "entity": "symfony console make:entity",
         "form": "symfony console make:form",

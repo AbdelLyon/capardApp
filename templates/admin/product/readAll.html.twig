@@ -25,6 +25,15 @@
 					</th>
 					<th>TITRE</th>
 					<th>
+						<span>CATÉGORIE</span>
+						<i class="fa-solid fa-caret-down text-secondary ms-2"></i>
+					</th>
+					<th>
+						<span>SOUS-CATÉGORIE</span>
+						<i class="fa-solid fa-caret-down text-secondary ms-2"></i>
+					</th>
+
+					<th>
 						<span>PRIX</span>
 						<i class="fa-solid fa-caret-down text-secondary ms-2"></i>
 					</th>
@@ -41,6 +50,8 @@
 					<tr class="align-center">
 						<td class="content-id">{{ product.id }}</td>
 						<td>{{ product.title }}</td>
+						<td>{{ product.category.name }}</td>
+						<td>{{ product.subcategory.name }}</td>
 						<td>{{ product.price }}€</td>
 						<td>{{ product.quantity }}</td>
 						<td>

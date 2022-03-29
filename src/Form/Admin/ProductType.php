@@ -1,8 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Form\Admin;
 
+use App\Entity\Category;
 use App\Entity\Product;
+use App\Entity\Subcategory;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -23,7 +28,6 @@ class ProductType extends AbstractType
             ->add('imageFile', VichImageType::class, [
                 'allow_delete' => false,
                 'delete_label' => null,
-                // 'imagine_pattern' => 300,
 
             ])
             ->add('description', null, [
@@ -34,6 +38,14 @@ class ProductType extends AbstractType
             ])
             ->add('price', null, [
                 'label' => 'Prix'
+            ])
+
+            ->add('category', EntityType::class, [
+                'class' => Category::class
+            ])
+
+            ->add('subcategory', EntityType::class, [
+                'class' => Subcategory::class
             ])
             ->add('quantity', null, [
                 'label' => 'Quantité',
