@@ -8,6 +8,18 @@
 	</div>
 
 	<div class="form-group mb-3">
+		{{ form_row(form.category, {'attr': {'placeholder': 'Catégorie', 'class': 'form-control'}}) }}
+		{{ form_help(form.category) }}
+		{{ form_errors(form.category) }}
+	</div>
+
+	<div class="form-group mb-3">
+		{{ form_row(form.subcategory, {'attr': {'placeholder': 'Catégorie', 'class': 'form-control'}}) }}
+		{{ form_help(form.subcategory) }}
+		{{ form_errors(form.subcategory) }}
+	</div>
+
+	<div class="form-group mb-3">
 		{{ form_widget(form.brand, {'attr': {'placeholder': 'Marque', 'class': 'form-control'}}) }}
 		{{ form_help(form.brand) }}
 		{{ form_errors(form.brand) }}
@@ -15,7 +27,7 @@
 
 
 	<div class="form-group mb-3">
-		{{ form_widget(form.imageFile, {'attr': {'placeholder': 'Image', 'class': 'form-control'}}) }}
+		{{ form_widget(form.imageFile, {'attr': { 'placeholder': 'Image', 'class': 'form-control'}}) }}
 		{{ form_help(form.imageFile) }}
 		{{ form_errors(form.imageFile) }}
 	</div>

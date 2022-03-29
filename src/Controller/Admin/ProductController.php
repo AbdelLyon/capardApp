@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller\Admin;
 
 use App\Entity\Product;
@@ -12,28 +14,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin')]
+#[Route('/admin/product', name: 'admin_product_')]
 class ProductController extends AbstractController
 {
-    #[Route('/products', name: 'admin_product_index')]
-    public function index(ProductRepository $repo): Response
-    {
-        return $this->render('admin/product/index.html.twig', [
-            'products' => $repo->findAll(),
-        ]);
-    }
-
-    #[Route('/show/{id}', name: 'admin_product_show')]
-    public function show(Product $product): Response
-    {
-        return $this->render('admin/product/show.html.twig', [
-            'product' => $product,
-        ]);
-    }
 
 
-    #[Route('/new', name: 'admin_product_new')]
-    public function new(Request $request, EntityManagerInterface $em): Response
+    #[Route('/create/{id}', name: 'create', requirements: ['id' => '\d+'], defaults: ['id' => null])]
+    public function create(Request $request, EntityManagerInterface $em): Response
     {
         $product = new Product;
         $form = $this->createForm(ProductType::class, $product);
@@ -43,11 +30,66 @@ class ProductController extends AbstractController
             $product->setCreatedAt(new DateTimeImmutable());
             $em->persist($product);
             $em->flush();
-            return $this->redirectToRoute('product');
+            return $this->redirectToRoute('admin_product_readAll');
         }
 
-        return $this->renderForm('admin/product/new.html.twig', [
+        return $this->renderForm('admin/product/create.html.twig', [
             'form' => $form,
         ]);
+    }
+
+
+    #[Route('/all', name: 'readAll')]
+    public function readAll(ProductRepository $repo): Response
+    {
+        return $this->render('admin/product/readAll.html.twig', [
+            'products' => $repo->findAll(),
+        ]);
+    }
+
+    #[Route('/readOne/{id}', name: 'readOne', requirements: ['id' => '\d+'])]
+    public function read(Product $product): Response
+    {
+        return $this->render('admin/product/readOne.html.twig', [
+            'product' => $product,
+        ]);
+    }
+
+
+    #[Route('/update/{id}', name: 'update', requirements: ['id' => '\d+'])]
+    public function update(Product $product, Request $request, EntityManagerInterface $em): Response
+    {
+        $form = $this->createForm(ProductType::class, $product);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+
+
+
+
+
+            //essayet de modifier sans persist
+            $em->persist($product);
+            $em->flush();
+            return $this->redirectToRoute('admin_product_readAll');
+        }
+
+        return $this->renderForm('admin/product/create.html.twig', [
+            'form' => $form,
+        ]);
+    }
+
+
+    #[Route('/delete/{id}', name: 'delete', requirements: ['id' => '\d+'])]
+    public function delete(Product $product, EntityManagerInterface $em): Response
+    {
+
+        $em->remove($product);
+        $em->flush();
+
+        $this->addFlash('success', 'deleted success');
+
+        return $this->redirectToRoute('admin_product_readAll');
     }
 }
