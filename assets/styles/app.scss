@@ -1,93 +1,10 @@
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import'~bootstrap/scss/bootstrap';
-
-
-.nav-icon {
-    font-size: 13px;
-
-}
-
-
-body {
-    font-family: 'Archivo Narrow', sans-serif
-}
-
-body,
-h2,
-textarea:required,
-input:required {
-    font-size: 0.9rem;
-}
-
-tr {
-    height: 40px;
-}
-
-th {
-    font-size: 0.8rem;
-
-}
-
-
-.logo {
-    font-style: italic;
-    font-size: 1rem;
-}
-
-.form-control:focus {
-    box-shadow: 0px 1px 6px #bebebe88;
-    border: 1px solid #bebebe88;
-}
-
-.app-container {
-    background-color: #fdfdfdf6;
-    width: 90%;
-    margin: 0 auto;
-    margin-bottom: 40px;
-}
-
-.navbar {
-    width: 90%;
-    margin: 0 auto;
-}
-
-
-.vich-image {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
-    a {
-        margin-top: 10px;
-        text-decoration: none;
-
-        img {
-            height: 250px;
-        }
-    }
-}
-
-main {
-    display: flex;
-    width: 90%;
-    margin: 0px auto;
-    min-height: 85vh;
-}
-
-.iputImg {
-    font-size: 14px;
-}
-
-.sidebar {
-    width: 20%;
-    min-width: 180px;
-}
-
-footer {
-    background-color: rgba(0, 0, 0, 0.2)
-}
-
-// main {
-//     background-image: url("../../public/images/Fotolia_81241373_S.jpg");
-// }
+@import 'shop/_variables';
+@import 'shop/_base';
+@import 'shop/_placeholders';
+@import 'shop/_mixins';
+@import 'shop/_animation';
+@import 'shop/_classes';
+@import 'shop/_header';
+@import 'shop/_home';
+@import 'shop/_footer';
+@import 'shop/_responsive';

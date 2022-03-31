@@ -1,0 +1,35 @@
+{% extends 'shop/base.html.twig' %}
+
+{% block title %}Hello ProductController!
+{% endblock %}
+
+{% block body %}
+
+	{% if products is empty %}
+		<h1>
+			Indisponible!
+		</h1>
+
+	{% else %}
+
+
+		{% for product in products %}
+
+			<p>
+				{{ product.title }}
+			</p>
+			<p>
+				{{ product.category.name }}
+			</p>
+			<p>
+				{{ product.subcategory.name }}
+			</p>
+			<p>
+				{{ product.price }}
+			</p>
+			<img src='{{ asset("images/products/#{product.imageName}" ) }}' alt="">
+		{% endfor %}
+	{% endif %}
+
+
+{% endblock %}

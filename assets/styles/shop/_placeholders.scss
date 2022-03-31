@@ -1,0 +1,48 @@
+%flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+%flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+%title {
+	width: 70%;
+	margin: auto;
+	padding: 2rem 0;
+	text-align: center;
+
+	h1 {
+		font-size: 4rem;
+		letter-spacing: 3px;
+		color: $primary;
+		opacity: 0.8;
+	}
+
+	h2 {
+		font-size: 4rem;
+		color: $secondary;
+	}
+
+	p {
+		width: 80%;
+		font-size: 1.6rem;
+		line-height: 2rem;
+		margin-bottom: 1.5rem;
+		font-style: italic;
+		color: $text-light;
+	}
+
+	img {
+		margin-top: 2rem;
+		width: 10rem;
+		transform-origin: center;
+	}
+
+	.icon-title-header {
+		color: $primary;
+		margin: 1rem 0;
+	}
+}

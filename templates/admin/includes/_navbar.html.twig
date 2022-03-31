@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light mb-2 ">
+	<a class="navbar-brand fs-6 text-primary" href=" {{path('admin_product_readAll')}} ">
+		<i class="fa-solid fa-screwdriver-wrench"></i>
+		Admin
+	</a>
+	<i class="navbar-toggler-icon" type="button"></i>
+	<div class="modal-nav-items d-none">
+		<ul class="navbar-nav bg-success">
+			{% include('admin/includes/_navlink-auth.html.twig') %}
+		</ul>
+	</div>
+	<div class="collapse navbar-collapse h-100 flex-row-reverse" id="navbarNav">
+		<ul class="navbar-nav">
+			{% include('admin/includes/_navlink-auth.html.twig') %}
+		</ul>
+	</div>
+</nav>

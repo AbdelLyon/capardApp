@@ -1,0 +1,35 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Rajdhani", sans-serif;
+	letter-spacing: 1.5px;
+	font-size: 1.5rem;
+	scroll-behavior: smooth;
+	overflow: hidden;
+	color: var(--text);
+	background-color: rgba(200, 200, 200, 0.15);
+	position: relative;
+}
+
+li {
+	list-style: none;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: 600;
+	margin: 2rem 0;
+}
+
+a {
+	text-decoration: none;
+}

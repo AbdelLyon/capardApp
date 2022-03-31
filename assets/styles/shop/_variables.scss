@@ -1,0 +1,17 @@
+$text: #434343;
+$text-light: #b1b1b1;
+$primary: #1ee6e399;
+$primary-light: #1ee6e333;
+$secondary: #0c9ca6de;
+$secondary-light: #0c9ca666;
+$gray-light: #c8c8c8b3;
+$opacity-anim: opacity 1s cubic-bezier(0.2, 0, 0.8, 0) .5s both;
+$opacity-anim-link: opacity 0.3s cubic-bezier(0.2, 0, 0.8, 0) both;
+
+$translateLeft-anim: translateLeft 1s ease-out 3s both;
+$translateBottom-anim: translateBottom .7s ease-in 2s both;
+$translateBottom-animForm: translateBottom 1s ease-in-out both;
+$translateTop: translateTop .4s ease-in both;
+
+$scale-anim: scale .7s ease-in 2s both;
+$rotate-anim: rotate 20s infinite 3s linear;

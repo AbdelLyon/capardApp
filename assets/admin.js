@@ -1,8 +1,7 @@
+
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/js/all.js';
+import './bootstrap';
 
-import './styles/app.scss';
-import './javascripts/shop/shop';
-
-
-
+import './styles/admin.scss';
+import './javascripts/admin/admin';
