@@ -1,0 +1,107 @@
+body {
+  font-family: 'Archivo Narrow', sans-serif
+}
+
+body,
+h2,
+textarea:required,
+input:required {
+  font-size: 0.9rem;
+}
+
+main {
+  display: flex;
+  width: 90%;
+  margin: 0px auto;
+  min-height: 85vh;
+}
+
+tr {
+  height: 40px;
+}
+
+th {
+  font-size: 0.8rem;
+
+}
+
+//classes
+
+.app-container {
+  background-color: #fdfdfdf6;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.navbar {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav-icon {
+  font-size: 13px;
+
+}
+
+.logo {
+  font-style: italic;
+  font-size: 1rem;
+}
+
+
+.form-control:focus {
+  box-shadow: 0px 1px 6px #bebebe88;
+  border: 1px solid #bebebe88;
+}
+
+.sidebar {
+  width: 20%;
+  min-width: 180px;
+}
+
+.vich-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  a {
+    margin-top: 10px;
+    text-decoration: none;
+
+    img {
+      height: 250px;
+    }
+  }
+}
+
+.iputImg {
+  font-size: 14px;
+}
+
+
+.modal-nav-items {
+  position: absolute;
+}
+
+
+footer {
+  background-color: rgba(0, 0, 0, 0.2)
+}
+
+//annim
+@keyframes translateLeft {
+  from {
+    transform: translateX(-100rem);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+.translateLeft-anim {
+  animation: 1s ease-out 3s both;
+}

@@ -53,18 +53,20 @@ class Product
     #[ORM\Column(type: 'boolean')]
     private bool $isActive;
 
-    #[ORM\Column(type: 'datetime_immutable')]
-    private DateTimeImmutable $createdAt;
-
-    #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    private DateTimeImmutable $updatedAt;
-
     #[ORM\ManyToOne(targetEntity: Subcategory::class, inversedBy: 'products')]
+    #[ORM\JoinColumn(nullable: false)]
     private Subcategory $subcategory;
 
     #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'products')]
     #[ORM\JoinColumn(nullable: false)]
-    private $category;
+    private Category $category;
+
+    #[ORM\Column(type: 'datetime_immutable')]
+    private DateTimeImmutable $createdAt;
+
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private $updatedAt;
+
 
     public function getId(): ?int
     {
@@ -195,18 +197,6 @@ class Product
         return $this;
     }
 
-    public function getUpdatedAt(): ?\DateTimeImmutable
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
     public function getSubcategory(): ?Subcategory
     {
         return $this->subcategory;
@@ -227,6 +217,19 @@ class Product
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

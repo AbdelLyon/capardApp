@@ -11,18 +11,18 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700&display=swap" rel="stylesheet">
 		{% block stylesheets %}
-			{{ encore_entry_link_tags('app') }}
+			{{ encore_entry_link_tags('admin') }}
 		{% endblock %}
 
 		{% block javascripts %}
-			{{ encore_entry_script_tags('app') }}
+			{{ encore_entry_script_tags('admin') }}
 		{% endblock %}
 	</head>
 	<body>
 		<div class="app-container">
-			{% include('includes/admin/_navbar.html.twig') %}
+			{% include('admin/includes/_navbar.html.twig') %}
 			<main>
-				{% include('includes/admin/_sidebar.html.twig') %}
+				{% include('admin/includes/_sidebar.html.twig') %}
 				{% block body %}{% endblock %}
 			</main>
 		</div>

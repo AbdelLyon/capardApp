@@ -1,0 +1,88 @@
+{% extends 'shop/base.html.twig' %}
+
+{% block title %}Hello ProductController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="h-100 mx-5 mb-5">
+		{% include('shop/includes/_navbar.html.twig')%}
+		<section id="product" class="container">
+			<ul class="my-5 flex-row-between ">
+				<li class="card">
+					<img width="300" src='{{ asset("images/products/#{product.imageName}" ) }}' alt="">
+					<p>
+						{{product.title}}
+					</p>
+					<small>{{product.price}}€</small>
+				</li>
+				<div class="description p-2 shadow ms-2">
+					<h2>Description</h2>
+					<p class="text-dark">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae perferendis quo officia! Sint ex provident harum explicabo fugiat porro, sequi laboriosam id velit! Quod distinctio necessitatibus quam?</p>
+					<div class="images my-2 mx-2 ">
+						<img width="100" height="100" class="border p-1 cursor-p" src='{{ asset("images/products/#{product.imageName}" ) }}' alt="">
+						<img width="100" height="100" class="border p-1 cursor-p" src='{{ asset("images/products/#{product.imageName}" ) }}' alt="">
+						<img width="100" height="100" class="border p-1 cursor-p" src='{{ asset("images/products/#{product.imageName}" ) }}' alt="">
+						<img width="100" height="100" class="border p-1 cursor-p" src='{{ asset("images/products/#{product.imageName}" ) }}' alt="">
+					</div>
+					<a class="link " href="#">
+						<i class="fa-solid fa-cart-plus bold text-secondary"></i>
+						<span class="bold text-secondary">Ajouter au panier</span>
+					</a>
+				</div>
+			</ul>
+		</section>
+
+
+		<section class="container flex-row-between flex-wrap">
+			<a href=" {{path('product_readOne', {id: product.id})}} ">
+				<article class="card">
+					<img width="200" src='{{ asset("images/products/image3-6248c786cae32985964877.webp" ) }}' alt="">
+					<p>
+						{{product.title}}
+					</p>
+					<small>{{product.price}}€</small>
+					<i class="fa-solid fa-star text-yellow"></i>
+					<i class="fa-solid fa-star text-yellow"></i>
+					<i class="fa-solid fa-star-half-stroke text-yellow"></i>
+				</article>
+			</a>
+			<a href=" {{path('product_readOne', {id: product.id})}} ">
+				<article class="card">
+					<img width="200" src='{{ asset("images/products/#{product.imageName}" ) }}' alt="">
+					<p>
+						{{product.title}}
+					</p>
+					<small>{{product.price}}€</small>
+					<i class="fa-solid fa-star text-yellow"></i>
+					<i class="fa-solid fa-star text-yellow"></i>
+					<i class="fa-solid fa-star-half-stroke text-yellow"></i>
+				</article>
+			</a>
+			<a href=" {{path('product_readOne', {id: product.id})}} ">
+				<article class="card">
+					<img width="200" src='{{ asset("images/products/image1-6248e2031df0c000255951.webp" ) }}' alt="">
+					<p>
+						{{product.title}}
+					</p>
+					<small>{{product.price}}€</small>
+					<i class="fa-solid fa-star text-yellow"></i>
+					<i class="fa-solid fa-star text-yellow"></i>
+					<i class="fa-solid fa-star-half-stroke text-yellow"></i>
+				</article>
+			</a>
+			<a href=" {{path('product_readOne', {id: product.id})}} ">
+				<article class="card">
+					<img width="200" src='{{ asset("images/products/image1-6248e2031df0c000255951.webp" ) }}' alt="">
+					<p>
+						{{product.title}}
+					</p>
+					<small>{{product.price}}€</small>
+					<i class="fa-solid fa-star text-yellow"></i>
+					<i class="fa-solid fa-star text-yellow"></i>
+					<i class="fa-solid fa-star-half-stroke text-yellow"></i>
+				</article>
+			</a>
+		</section>
+	</div>
+{% endblock %}
