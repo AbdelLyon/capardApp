@@ -5,7 +5,7 @@ header {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100vh;
+	min-height: 100vh;
 	color: #fff;
 }
 
@@ -13,6 +13,7 @@ header {
 	padding: 0 4rem;
 	display: flex;
 	align-items: center;
+
 
 	#logo {
 		color: $primary;
@@ -22,10 +23,10 @@ header {
 	//formulaire search
 	form {
 		position: relative;
-		width: 40rem;
+		width: 36rem;
 
 		input {
-			width: 40rem;
+			width: 36rem;
 			padding: .7rem;
 			border: 1px solid $primary-light;
 			border-radius: 2px;
@@ -37,14 +38,16 @@ header {
 			&::placeholder {
 				color: rgba(245, 245, 245, 0.582);
 				font-weight: 500;
+				font-size: 1.2rem;
+				font-style: italic;
+
 			}
 
 			&:focus {
 				outline: none;
 				border: 1px solid $primary-light;
-				background-color: rgba(26, 26, 26, 0.384);
 				color: $text-light;
-				box-shadow: 0px 2px 3px $primary-light;
+				box-shadow: 0px 1px 2px $primary-light;
 			}
 		}
 
@@ -56,6 +59,7 @@ header {
 			font-size: 1.4rem;
 			transition: all 0.3s;
 			cursor: pointer;
+			color: $text-light
 		}
 	}
 
@@ -94,19 +98,25 @@ header {
 }
 
 #navbar-products {
+	color: $text-light;
+
 	ul {
-		margin-left: 7rem;
+		margin-left: 6.5rem;
 		margin-top: 1rem;
 		width: 100%;
 		display: flex;
 
 		li {
 			position: relative;
-			margin-right: 10rem;
-			font-size: 1.3rem;
+			margin-right: 8rem;
+			font-size: 1.2rem;
 			font-weight: 700;
 			transition: all 0.3s;
-			color: $text-light;
+
+			span {
+				display: block;
+				padding-bottom: 1rem;
+			}
 
 			a {
 				display: flex;
@@ -118,21 +128,22 @@ header {
 }
 
 .modalLinkProduct {
+	animation: $opacity-anim-link;
+	color: $primary-light;
 	display: none;
 	position: absolute;
 	left: -0.2rem;
 	width: 20rem;
 	border-radius: 4px;
 	z-index: 1;
-	padding: 10px 0;
+	background-color: #3b3c3d;
+	border: 1px solid $primary-light;
+	box-shadow: 1px 1px 1px $primary-light;
 
 	a {
-		color: $text-light;
 		font-size: 1.2rem;
 		font-weight: 600;
-		border-bottom: 1px solid $primary-light;
 		padding: 1.3rem;
-		background-color: rgba(0, 0, 0, 0.2);
 
 		&:hover {
 			color: $primary;

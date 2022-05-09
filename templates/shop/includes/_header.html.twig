@@ -1,64 +1,5 @@
 <header>
-	<nav id="navbar-account">
-		<a class="link" href="#">
-			<i id="logo" class="fas fa-dove"></i>
-		</a>
-		<form>
-			<input class="form-control" type="search" placeholder="Search"/>
-			<i class="fas fa-search icon-search"></i>
-		</form>
-		<ul>
-
-			{% if app.user %}
-				<li>
-					<a class="link user-link" href="#">
-						<i class="fas fa-user"></i>
-					</a>
-					<small id="user-profile" class="opacity-anim-link">Mon compte</small>
-				</li>
-				<li>
-					<a class="link user-link" href="#">
-						<i class="fa-solid fa-right-to-bracket"></i>
-					</a>
-					<small id="user-logout" class="opacity-anim-link">Déconnexion</small>
-				</li>
-				<li>
-					<a class="link user-link" href="#">
-						<i class="fas fa-shopping-basket link"></i>
-					</a>
-					<small id="user-shopping" class="opacity-anim-link">Panier</small>
-				</li>
-			{% else %}
-				<li>
-					<a class="link user-link" href="#">
-						<i class="fa-solid fa-right-to-bracket"></i>
-					</a>
-					<small id="user-login" class="opacity-anim-link">Connexion</small>
-				</li>
-				<li>
-					<a class="link user-link" href="#">
-						<i class="fa-solid fa-user-plus"></i>
-					</a>
-					<small id="user-register" class="opacity-anim-link">Inscription</small>
-				</li>
-			{% endif %}
-			<li>
-				<i class="fs-2 fas fa-bars"></i>
-			</li>
-		</ul>
-	</nav>
-	<nav id="navbar-products">
-		<ul>
-			{% for category in categories %}
-				<li class="link-container" id="{{category.name}}">
-					<span class="link">
-						{{ category.name }}
-						<i class="fas fa-caret-down mx-1"></i>
-					</span>
-				</li>
-			{% endfor %}
-		</ul>
-	</nav>
+	{% include('shop/includes/_navbar.html.twig') with { categories }  %}
 	<div class="title flex-column-center">
 		<h1></h1>
 		<p class="opacity-anim">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptatibus accusamus eaque blanditiis amet at inveritatis assumenda dolorem facere beatae sint possimus, fuga sunt.
@@ -66,7 +7,7 @@
 		<div class="flex-column-center scale-anim">
 			<img class="rotate-anim" src="https://cdn.pixabay.com/photo/2020/03/09/21/31/moon-4917183_960_720.png" alt="planet">
 			<i class="icon-title-header fas fa-angle-double-down translateBottom-anim"></i>
-			<a id="btn-header" class="btn btn-primary translateBottom-anin" href="#product">Nos offres</a>
+			<a id="btn-header" class="btn btn-primary translateBottom-anin">Nos offres</a>
 		</div>
 	</div>
 </header>

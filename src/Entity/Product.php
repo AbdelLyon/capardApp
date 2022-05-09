@@ -57,7 +57,6 @@ class Product
     #[ORM\JoinColumn(nullable: false)]
     private Subcategory $subcategory;
 
-
     #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'products')]
     #[ORM\JoinColumn(nullable: false)]
     private Category $category;

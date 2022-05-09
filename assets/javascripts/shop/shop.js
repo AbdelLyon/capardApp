@@ -23,9 +23,7 @@ const showLetters = (i, title, content) => {
 		title.innerHTML += content[i];
 		timeOut = setTimeout(() => showLetters(i, title, content), Math.floor(Math.random() * (100 - 8) + 8));
 		i++;
-	} else {
-		clearTimeout(timeOut);
-	}
+	} else clearTimeout(timeOut);
 };
 
 //display userLink
@@ -45,9 +43,9 @@ const displayLinkSubCategory = async () => {
 					const modalLinkProduct = createNode({
 						tagname: "div",
 						className: "modalLinkProduct",
-						content: data[key].map(d => `<a class="nav-link opacity-anim-link" href="/products/${key}/${d.name}"> ${d.name} </a>`).join('')
-
+						content: data[key].map(d => `<a class="link link-light" href="/products/${key}/${d.name}"> ${d.name} </a>`).join('')
 					});
+
 					link.append(modalLinkProduct);
 					mouseEvent(link, modalLinkProduct)
 				}

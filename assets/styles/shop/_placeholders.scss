@@ -8,6 +8,34 @@
 	flex-direction: column;
 }
 
+%card {
+	cursor: pointer;
+	box-shadow: 1px 3px 8px #9c9c9c5b;
+	padding: 2rem;
+	border-radius: 4px;
+	background-color: #fff;
+	color: $text;
+	font-size: 1.3rem;
+	line-height: 2.5rem;
+	transition: all 0.3s;
+
+
+	p {
+		font-weight: 700;
+		color: $secondary;
+		margin-top: 2rem;
+	}
+
+	small {
+		counter-reset: $text-light;
+
+	}
+
+	&:hover {
+		transform: scale(1.04);
+	}
+}
+
 %title {
 	width: 70%;
 	margin: auto;
