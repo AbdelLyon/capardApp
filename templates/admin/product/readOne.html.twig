@@ -1,0 +1,68 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="flex-fill ms-4 shadow table-responsive bg-white p-4">
+		<div class="d-flex justify-content-between align-items-center mb-5">
+			<a href="{{path('admin_product_readAll')}}">
+				<i class="angle fa-solid fa-angle-left"></i>
+			</a>
+			<h2 class="fw-bold text-secondary m-0">Détails</h2>
+		</div>
+		<div class="container">
+			<table class="table table-sm table-hover">
+				<tbody>
+					<tr class="align-center">
+						<th class="text-primary">ID :</th>
+						<td class="content-id">{{ product.id }}</td>
+					</tr>
+					<tr class="align-center">
+						<th class="text-primary">TITRE :</th>
+						<td>{{ product.title }}</td>
+					</tr>
+					<tr class="align-center">
+						<th class="text-primary">
+							Sous-catégorie :</th>
+						<td>{{ product.subcategory }}</td>
+					</tr>
+					<tr class="align-center">
+						<th class="text-primary">MARQUE :</th>
+						<td>{{ product.brand }}</td>
+					</tr>
+					<tr class="align-center">
+						<th class="text-primary">IMAGE :</th>
+						<td>{{ product.imageName }}</td>
+					</tr>
+					<tr class="align-center">
+						<th class="text-primary">DÉSCRIPTION :</th>
+						<td>{{ product.description }}</td>
+					</tr>
+
+					<tr class="align-center">
+						<th class="text-primary">PRIX :</th>
+						<td>{{ product.price }}€</td>
+					</tr>
+
+					<tr class="align-center">
+						<th class="text-primary">QUANTITÉ :</th>
+						<td>{{ product.quantity }}</td>
+					</tr>
+					<tr class="align-center">
+						<th class="text-primary">ACTIF :</th>
+						<td>
+							<i class="{{ product.isActive ? "fa-solid fa-check text-success" : "fa-solid fa-xmark text-danger" }}"></i>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="d-flex flex-row-reverse">
+				<a href=" {{path('admin_product_delete', {id: product.id})}} " class="btn btn-sm btn-danger d-flex mb-2">
+					<i class="fa-solid fa-trash-can text-white"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,4 +1,6 @@
 {
     "controllers": [],
-    "entrypoints": []
+    "entrypoints": [
+        "admin"
+    ]
 }

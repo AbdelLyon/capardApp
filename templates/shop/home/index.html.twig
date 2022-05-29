@@ -1,0 +1,9 @@
+{% extends 'shop/base.html.twig' %}
+{% block title %}
+	Hello HomeController!
+{% endblock %}
+
+{% block body %}
+	{% include "./shop/includes/_header.html.twig" with { categories } %}
+	{% include "./shop/includes/_footer.html.twig" %}
+{% endblock %}

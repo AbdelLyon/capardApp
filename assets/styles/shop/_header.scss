@@ -1,0 +1,154 @@
+header {
+	@extend %flex-column;
+	background-image: linear-gradient(rgba(14, 19, 19, 0.7), rgba(0, 0, 0, 0.8)),
+		url("https://cdn.pixabay.com/photo/2017/04/24/15/25/robot-2256814_960_720.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+	color: #fff;
+}
+
+#navbar-account {
+	padding: 0 4rem;
+	display: flex;
+	align-items: center;
+
+
+	#logo {
+		color: $primary;
+		margin-right: 1rem;
+	}
+
+	//formulaire search
+	form {
+		position: relative;
+		width: 36rem;
+
+		input {
+			width: 36rem;
+			padding: .7rem;
+			border: 1px solid $primary-light;
+			border-radius: 2px;
+			color: $text-light;
+			background-color: inherit;
+			caret-color: $text-light;
+			font-size: 1.4rem;
+
+			&::placeholder {
+				color: rgba(245, 245, 245, 0.582);
+				font-weight: 500;
+				font-size: 1.2rem;
+				font-style: italic;
+
+			}
+
+			&:focus {
+				outline: none;
+				border: 1px solid $primary-light;
+				color: $text-light;
+				box-shadow: 0px 1px 2px $primary-light;
+			}
+		}
+
+		.icon-search {
+			position: absolute;
+			right: 0;
+			top: 0;
+			margin: 2.5rem 1rem;
+			font-size: 1.4rem;
+			transition: all 0.3s;
+			cursor: pointer;
+			color: $text-light
+		}
+	}
+
+	// liste link account
+	ul {
+		@extend %flex-row;
+		justify-content: flex-end;
+		flex: 1;
+
+		li {
+			@extend %flex-row;
+			justify-content: center;
+			margin-left: 4rem;
+			padding: 0;
+
+			small {
+				display: none;
+				margin-top: 2.5rem;
+				color: $text-light;
+				position: absolute;
+				font-size: 1.1rem;
+				font-weight: 600;
+
+			}
+
+			&:last-child {
+				display: none;
+
+				i {
+					font-size: 2rem;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+#navbar-products {
+	color: $text-light;
+
+	ul {
+		margin-left: 6.5rem;
+		margin-top: 1rem;
+		width: 100%;
+		display: flex;
+
+		li {
+			position: relative;
+			margin-right: 8rem;
+			font-size: 1.2rem;
+			font-weight: 700;
+			transition: all 0.3s;
+
+			span {
+				display: block;
+				padding-bottom: 1rem;
+			}
+
+			a {
+				display: flex;
+				align-items: center;
+
+			}
+		}
+	}
+}
+
+.modalLinkProduct {
+	animation: $opacity-anim-link;
+	color: $primary-light;
+	display: none;
+	position: absolute;
+	left: -0.2rem;
+	width: 20rem;
+	border-radius: 4px;
+	z-index: 1;
+	background-color: #3b3c3d;
+	border: 1px solid $primary-light;
+	box-shadow: 1px 1px 1px $primary-light;
+
+	a {
+		font-size: 1.2rem;
+		font-weight: 600;
+		padding: 1.3rem;
+
+		&:hover {
+			color: $primary;
+			box-shadow: 0px 2px 3px $primary-light;
+			background-color: rgba(0, 0, 0, 0.4);
+		}
+	}
+}

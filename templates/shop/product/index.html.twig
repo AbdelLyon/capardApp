@@ -1,0 +1,37 @@
+{% extends 'shop/base.html.twig' %}
+
+{% block title %}Hello ProductController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="h-100 mx-5">
+		{% include('shop/includes/_navbar.html.twig')   %}
+		{% if products is empty %}
+			<div class="text-center">
+				<h1></h1>
+				<h2>Produit indisponible!</h2>
+			</div>
+
+		{% else %}
+			<section id="product" class=" container flex-row-between flex-wrap">
+				{% for product in products %}
+					<div class="my-5">
+						<a href=" {{path('product_readOne', {id: product.id})}} ">
+							<article class="card">
+								<img width="200" src='{{ asset("images/products/#{product.imageName}" ) }}' alt="">
+								<p>
+									{{product.title}}
+								</p>
+								<small>{{product.price}}€</small>
+								<i class="fa-solid fa-star text-yellow"></i>
+								<i class="fa-solid fa-star text-yellow"></i>
+								<i class="fa-solid fa-star-half-stroke text-yellow"></i>
+							</article>
+						</a>
+					</div>
+				{% endfor %}
+			</section>
+		{% endif %}
+	</div>
+{% endblock %}

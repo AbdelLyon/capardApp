@@ -1,0 +1,272 @@
+.filter {
+	position: absolute;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.734);
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.text-dark {
+	color: $text;
+}
+
+.text-yellow {
+	color: rgb(255, 252, 77);
+}
+
+.bg-dark {
+	background-color: #3b3c3d;
+}
+
+.bg-light {
+	background-color: rgba(240, 240, 240, 0.734);
+}
+
+.shadow {
+	box-shadow: 1px 3px 8px #9c9c9c5b;
+
+}
+
+.radius-5 {
+	border-radius: 5px;
+}
+
+.p-1 {
+	padding: 1rem;
+}
+
+.cursor-p {
+	cursor: pointer;
+}
+
+
+.p-2 {
+	padding: 2rem;
+}
+
+
+.bg-white {
+	background-color: #fff;
+}
+
+.py-4 {
+	padding: 4rem 0;
+}
+
+.h-100 {
+	min-height: 100vh;
+}
+
+.text-dark {
+	color: $text;
+}
+
+.text-light {
+	color: $text-light;
+}
+
+.mb-2 {
+	margin-bottom: 2rem;
+}
+
+.my-2 {
+	margin: 2rem 0;
+}
+
+.ms-2 {
+	margin-left: 2rem;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.text-secondary {
+	color: $secondary;
+
+}
+
+.mx-5 {
+	margin: 0 5rem;
+}
+
+.mb-5 {
+	margin-bottom: 5rem;
+
+}
+
+.rounded-circle {
+	border-radius: 50%;
+}
+
+.my-5 {
+	margin: 5rem 0;
+}
+
+.border {
+	border: 1px solid rgb(226, 226, 226);
+}
+
+.text-center {
+	text-align: center;
+}
+
+.opacity-anim {
+	animation: $opacity-anim;
+}
+
+.opacity-anim-link {
+	animation: $opacity-anim-link;
+}
+
+
+
+.translateLeft-anim {
+	animation: $translateLeft-anim;
+}
+
+.translateBottom-anim {
+	animation: $translateBottom-anim;
+}
+
+.translateBottom-animForm {
+	animation: $translateBottom-animForm;
+}
+
+.translateTop-anim {
+	animation: $translateTop;
+}
+
+.scale-anim {
+	animation: $scale-anim;
+}
+
+.rotate-anim {
+	animation: $rotate-anim;
+}
+
+.box-shadow-primary {
+	box-shadow: 0px 2px 3px $primary-light;
+}
+
+.link {
+	transition: all 0.3s;
+	cursor: pointer;
+	color: $primary
+}
+
+
+.flex-wrap {
+	flex-wrap: wrap
+}
+
+.flex-row-end {
+	@include flex(row, end, none);
+}
+
+.flex-row-center {
+	@include flex(row, center, none);
+}
+
+.flex-row-around {
+	@include flex(row, space-around, none);
+}
+
+
+.flex-row-between {
+	@include flex(row, space-between, none);
+}
+
+.flex-column-center {
+	@include flex(column, center, center);
+}
+
+.title {
+	@extend %title;
+}
+
+.card {
+	@extend %card;
+
+}
+
+.form-control {
+	border: none;
+	width: 70%;
+	margin: 1.5rem auto;
+	padding: .6rem;
+	border-bottom: 1px solid $gray-light;
+	background-color: transparent;
+
+	&::placeholder {
+		color: $text;
+		font-size: 1.4rem;
+	}
+
+	&:focus {
+		background-color: transparent;
+		color: $text;
+		outline: none;
+		border: none;
+		border-bottom: 1px solid $primary;
+	}
+}
+
+.exit {
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 1.5rem;
+	cursor: pointer;
+	color: $text;
+}
+
+//button
+
+.btn {
+	padding: 1rem 2rem;
+	font-weight: 600;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s;
+
+	&-primary {
+		color: $primary;
+		background-color: rgba(0, 0, 0, 0.2);
+		border: 1px solid $primary-light;
+
+		&:hover {
+			color: $text-light;
+			background-color: rgba(0, 0, 0, 0.4);
+			box-shadow: 0px 2px 3px $primary-light;
+		}
+	}
+
+	&-secondary {
+		background-color: rgba(0, 0, 0, 0.1);
+		color: $secondary;
+		border: 1px solid $secondary-light;
+
+		&:hover {
+			color: $secondary;
+			box-shadow: 0px 2px 3px $secondary-light;
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	&-form {
+		color: $secondary;
+		border: 1px solid $secondary;
+
+		h &:hover {
+			color: #fff;
+			background-color: $secondary;
+		}
+	}
+}
