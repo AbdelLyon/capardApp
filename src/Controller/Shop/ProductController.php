@@ -14,7 +14,6 @@ class ProductController extends AbstractController
     #[Route('/products/{cat}/{subcat}', name: 'products')]
     public function index(ProductRepository $repProduct, CategoryRepository $repCat, string $cat, string $subcat): Response
     {
-
         $products = array_filter(
             $repProduct->findAll(),
             fn ($product) =>
