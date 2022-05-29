@@ -1,16 +1,11 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/js/all.js';
-<<<<<<< HEAD
 import './bootstrap';
-=======
-
->>>>>>> cab800a67f6f5da9315e0808a6a14833a3d9b183
 import './styles/app.scss';
 import './javascripts/shop/shop';
 
 
 
-<<<<<<< HEAD
 // const btnId = document.querySelector('.btn-id');
 // const contentId = document.querySelectorAll('.content-id');
 
@@ -40,5 +35,3 @@ const folderToggle = (folder, subfolder) => folder.addEventListener('click', () 
 folderToggle(folderProduct, subfolderProduct);
 folderToggle(folderCategory, subfolderCategory);
 folderToggle(folderSubcategory, subfolderSubcategory);
-=======
->>>>>>> cab800a67f6f5da9315e0808a6a14833a3d9b183

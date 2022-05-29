@@ -1,19 +1,8 @@
 <?php
 
-<<<<<<< HEAD
 namespace App\Form\Admin;
 
 use App\Entity\Product;
-=======
-declare(strict_types=1);
-
-namespace App\Form\Admin;
-
-use App\Entity\Category;
-use App\Entity\Product;
-use App\Entity\Subcategory;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
->>>>>>> cab800a67f6f5da9315e0808a6a14833a3d9b183
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -32,13 +21,7 @@ class ProductType extends AbstractType
                 'label' => 'Marque'
             ])
             ->add('imageFile', VichImageType::class, [
-<<<<<<< HEAD
                 'label' => 'Image'
-=======
-                'allow_delete' => false,
-                'delete_label' => null,
-
->>>>>>> cab800a67f6f5da9315e0808a6a14833a3d9b183
             ])
             ->add('description', null, [
                 'label' => 'Déscription',
@@ -49,17 +32,6 @@ class ProductType extends AbstractType
             ->add('price', null, [
                 'label' => 'Prix'
             ])
-<<<<<<< HEAD
-=======
-
-            ->add('category', EntityType::class, [
-                'class' => Category::class
-            ])
-
-            ->add('subcategory', EntityType::class, [
-                'class' => Subcategory::class
-            ])
->>>>>>> cab800a67f6f5da9315e0808a6a14833a3d9b183
             ->add('quantity', null, [
                 'label' => 'Quantité',
             ])
